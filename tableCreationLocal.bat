@@ -1,0 +1,1 @@
+PGUSER=postgres PGPASSWORD=root psql -d "localDB" -a -f tableCreation.sql
