@@ -78,9 +78,11 @@ exports.CRUDModule = function(objectName, getSqlCreate, getSqlRead, getSqlUpdate
 				
 				if (typeof(self.beforeSendRead) == "function") self.beforeSendRead(req, res, object); 
 
+				console.log("Read " + self.objectName + ": " + result.rows[0][self.objectIDName]);
 				res.status(200).send(object);
 			}
 			else {
+				console.log("Error during " + self.objectName + " get: 404");
 				res.status(404).end();
 			}
 		});
@@ -103,6 +105,7 @@ exports.CRUDModule = function(objectName, getSqlCreate, getSqlRead, getSqlUpdate
 
 				if (typeof(self.beforeSendUpdate) == "function") self.beforeSendUpdate(req, res, object); 
 
+				console.log("Updated " + self.objectName + ": " + result.rows[0][self.objectIDName]);
 				res.send(object);				
 			}
 		});
