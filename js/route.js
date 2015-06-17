@@ -46,8 +46,10 @@ router.routes = [
 		});
 
 	}),
+	new Route("/fence_group/getAll", "get", fenceGroupMgt.crud.onReadAllFenceGroups),
 	new Route("/fence_group", "post", fenceGroupMgt.crud.onCreate),
 	new Route("/fence_group/:fence_group_id", "get", fenceGroupMgt.crud.onRead),
+	new Route("/fence_group/:fence_group_id/getFences", "get", fenceGroupMgt.crud.onReadFenceGroupComplete),
 	new Route("/fence_group/:fence_group_id", "put", fenceGroupMgt.crud.onUpdate),
 	new Route("/fence_group/:fence_group_id", "delete", fenceGroupMgt.crud.onDelete),
 	new Route("/fence_group/:fence_group_id/fence", "post", fenceMgt.crud.onCreate),

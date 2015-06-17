@@ -11,7 +11,7 @@ var updatedSampleFenceGroup = JSON.parse(JSON.stringify(sampleFenceGroup));
 updatedSampleFenceGroup.name = "TEST updated fence group";
 
 QUnit.test("fence_group tests", function(assert) {
-	assert.expect(5);
+	assert.expect(9);
 
 	var done;
 	done = assert.async();
@@ -52,6 +52,35 @@ QUnit.test("fence_group tests", function(assert) {
 		url: "/fence_group/" + sampleFenceGroup.fence_group_id,
 		complete: onAsyncComplete("fence_group delete", done)
 	});
+
+
+	// Test getting all fence groups
+	done = assert.async();
+	$.ajax({
+		type: "GET",
+		url: "/fence_group/getAll",
+		success: function(data, textStatus, jqXHR) {
+			if (data.length > 0) {
+				QUnit.equal(true, true, "Should have loaded at least one predefined fence group.");
+			}
+			else {
+				QUnit.equal(true, false, "Should have loaded at least one predefined fence group.");
+			}
+		},
+		complete: onAsyncComplete("fence_group getAll", done)
+	});
+
+	// Test getting all fences for a given group
+	done = assert.async();
+	$.ajax({
+		type: "GET",
+		url: "/fence_group/1/getFences",
+		success: function(data, textStatus, jqXHR) {
+			QUnit.equal(2, data.length, "Should have loaded two predefined fences for predefined fence group");
+		},
+		complete: onAsyncComplete("fence_group getFences", done)
+	});
+
 });
 
 
