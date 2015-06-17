@@ -2,7 +2,6 @@ var emailValidator = require("email-validator");
 
 var db = require(".././db");
 var crud = require("./crud");
-var sessionMgt = require(".././sessionMgt");
 
 exports.crud = new crud.CRUDModule("user",
 	function(user) {
