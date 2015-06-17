@@ -27,6 +27,7 @@ POST /fence_group
 
 Required:
 name
+type
 
 Returns: 
 fence_group_id
@@ -41,6 +42,7 @@ GET /fence_group/:fence_group_id
 Returns: 
 fence_group_id
 name
+type
 ```
 
 #### <a name="updateFenceGroup"></a>Updating a fence group
@@ -50,10 +52,12 @@ PUT /fence_group/:fence_group_id
 
 Required:
 name
+type
 
 Returns: 
 fence_group_id
 name
+type
 ```
 
 #### <a name="deleteFenceGroup"></a>Deleting a fence group
@@ -71,6 +75,7 @@ GET /fence_group/getAll
 Returns array of:
 fence_group_id
 name
+type
 ```
 
 

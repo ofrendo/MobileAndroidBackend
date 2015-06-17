@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS fence_group;
 
 CREATE TABLE fence_group (
 	fence_group_id SERIAL PRIMARY KEY,
-	name varchar(100) 
+	name varchar(100),
+	type varchar(10)
 );
 
 CREATE TABLE fence (

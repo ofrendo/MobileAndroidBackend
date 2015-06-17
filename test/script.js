@@ -5,7 +5,8 @@ $.ajaxSetup({
 
 //Fence group tests
 var sampleFenceGroup = {
-	name: "TEST fence group"
+	name: "TEST fence group",
+	type: "Enter"
 };
 var updatedSampleFenceGroup = JSON.parse(JSON.stringify(sampleFenceGroup));
 updatedSampleFenceGroup.name = "TEST updated fence group";
