@@ -32,6 +32,7 @@ type
 Returns: 
 fence_group_id
 name
+type
 ```
 
 #### <a name="readFenceGroup"></a>Reading a fence group

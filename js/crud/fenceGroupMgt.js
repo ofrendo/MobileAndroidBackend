@@ -6,7 +6,7 @@ exports.crud = new crud.CRUDModule("fence_group",
 		return {
 			text: "INSERT INTO fence_group" +
 				  " (name, type)" + 
-				  " VALUES ($1, $2) RETURNING fence_group_id",
+				  " VALUES ($1, $2) RETURNING fence_group_id, name, type",
 			values: [fence_group.name, fence_group.type]
 		};
 	},
