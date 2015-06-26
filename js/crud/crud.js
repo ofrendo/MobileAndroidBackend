@@ -58,8 +58,9 @@ exports.CRUDModule = function(objectName, getSqlCreate, getSqlRead, getSqlUpdate
 				
 				if (typeof(self.beforeSendCreate) == "function") self.beforeSendCreate(req, res, object); 
 				
-				var result = {};
-				result[self.objectIDName] = object[self.objectIDName];
+				var result = result.rows[0];
+				//var result = {};
+				//result[self.objectIDName] = object[self.objectIDName];
 				res.status(200).send(result);
 			}
 		});

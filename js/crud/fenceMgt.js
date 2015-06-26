@@ -6,7 +6,7 @@ exports.crud = new crud.CRUDModule("fence",
 		return {
 			text: "INSERT INTO fence" +
 				  " (fence_group_id, lat, lng, radius)" + 
-				  " VALUES ($1, $2, $3, $4) RETURNING fence_id",
+				  " VALUES ($1, $2, $3, $4) RETURNING fence_id, fence_group_id, lat, lng, radius",
 			values: [req.params.fence_group_id, fence.lat, fence.lng, fence.radius]
 		};
 	},
