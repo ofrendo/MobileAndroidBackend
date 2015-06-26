@@ -8,11 +8,12 @@ CREATE TABLE fence_group (
 );
 
 CREATE TABLE fence (
-	fence_id SERIAL PRIMARY KEY,
+	fence_id INT,
 	fence_group_id INT REFERENCES fence_group(fence_group_id),
 	lat DECIMAL(10, 7),
 	lng DECIMAL(10, 7),
-	radius INT
+	radius INT,
+	PRIMARY KEY(fence_id, fence_group_id)
 );
 
 INSERT INTO fence_group
@@ -20,9 +21,9 @@ INSERT INTO fence_group
 	VALUES ('TEST fence_group');
 
 INSERT INTO fence
-	(fence_group_id, lat, lng, radius)
-	VALUES (1, -1, -1, -1);
+	(fence_id, fence_group_id, lat, lng, radius)
+	VALUES (1, 1, -1, -1, -1);
 
 INSERT INTO fence
-	(fence_group_id, lat, lng, radius)
-	VALUES (1, -2, -2, -2);
+	(fence_id, fence_group_id, lat, lng, radius)
+	VALUES (2, 1, -2, -2, -2);
