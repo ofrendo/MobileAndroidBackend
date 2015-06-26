@@ -2,6 +2,9 @@
 Mobile android backend
 
 ## Heroku server
+https://mobileandroidbackend.herokuapp.com/
+
+## Unit tests
 https://mobileandroidbackend.herokuapp.com/test/index.html
 
 ## API
